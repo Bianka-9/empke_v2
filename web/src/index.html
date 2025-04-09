@@ -11,6 +11,50 @@
   <div class="container">
     <h1>Dolgozók</h1>
     
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#empModal">
+  Hozzáadás
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="empModal" tabindex="-1" aria-labelledby="empModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="empModalLabel">Dolgozó hozzáadása</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="empform">
+          <div class="input">
+            <label for="id" class="form-label">Id</label>
+            <input type="text" id="id" class="form-control" readonly>
+          </div>
+          <div class="input">
+            <label for="name" class="form-label">Név</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+          <div class="input">
+            <label for="city" class="form-label">Település</label>
+            <input type="text" id="city" class="form-control">
+          </div>
+          <div class="input">
+            <label for="salary" class="form-label">Fizetés</label>
+            <input type="text" id="salary" class="form-control">
+          </div>
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+        <button type="button" class="btn btn-primary" id="saveButton" data-bs-dismiss="modal">Mentés</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <table class="table table-striped">
       <thead>
         <tr>
