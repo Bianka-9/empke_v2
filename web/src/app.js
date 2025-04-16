@@ -36,10 +36,10 @@ function renderTbody(empList) {
       <td>${emp.city}</td>      
       <td>${emp.salary}</td>
       <td>
-        <button class="btn btn-danger">Törlés</button>
+        <button class="btn btn-danger" onclick="deleteEmployee(${emp.id})">Törlés</button>
       </td>
       <td>
-        <button class="btn btn-secondary">Szerkesztés</button>
+        <button class="btn btn-secondary" onclikc="updateEmployee(${emp})">Szerkesztés</button>
       </td>
     </tr>
     `;    
@@ -90,4 +90,17 @@ fetch(url, {
 })
 .catch(err => console.log(err))
 
+}
+
+function deleteEmployee(id) {
+  const delUrl = url + "/" + id;
+  fetch(delUrl, {method: 'DELETE'}).then(response => response.json())
+  .then(result => {
+    console.log(result)
+    getEmployees()
+  });
+}
+
+function updateEmployee(emp) {
+  console.log("emp: ", emp);
 }
